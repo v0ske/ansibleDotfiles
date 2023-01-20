@@ -7,7 +7,7 @@
       src: binaries/hyprsome
       dest: /usr/local/bin/hyprsome
 
----
+
 - name: place hyprland configs
   hosts: localhost
   tasks:
@@ -32,14 +32,16 @@
     file:
       src: templates/hyprlandConfig/keybinds.conf
       dest: ~/.config/hypr/keybinds.conf
----
+
+
 - name: place waybar configs
   hosts: localhost
   tasks:
-- name: Create way config directory
-  file:
-    path: ~/.config/hypr
-  when: not (ansible_facts['file_exists']['~/.config/hypr'])
+  - name: Create waybar config directory
+    file:
+      path: ~/.config/waybar
+      state: directory
+    when: not (ansible_facts['file_exists']['~/.config/waybar'])
   - name: config
     file:
       src: templates/waybarConfig/config
@@ -48,18 +50,30 @@
     file:
       src: templates/waybarConfig/style.css
       dest: ~/.config/waybar/style.css
----
+
+
 - name: place swaync configs
   hosts: localhost
   tasks:
+  - name: Create swaync config directory
+    file:
+      path: ~/.config/swaync
+      state: directory
+    when: not (ansible_facts['file_exists']['~/.config/swaync'])
   - name: config
     file:
       src: templates/swayncConfig/config.json
       dest: ~/.config/swaync/config.json
----
+
+
 - name: place nwgdrawer config
   hosts: localhost
   tasks:
+  - name: Create nwgdrawer config directory
+    file:
+      path: ~/.config/nwg-drawer
+      state: directory
+    when: not (ansible_facts['file_exists']['~/.config/nwg-drawer'])
   - name: config
     file:
       src: templates/nwgdrawerConfig/drawer.css

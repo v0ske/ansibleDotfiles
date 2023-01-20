@@ -1,13 +1,10 @@
 ---
 - name: Master playbook
   hosts: localhost
-  gather_facts: false
-  vars_file:
-    - vars.yaml
-
-  tasks:
+  vars:
+    env: laptop
   # Run hyprland playbooks
-  - name: install hyprland packages
-    import_playbook: hyprland/installPackages.yaml
-  - name: place the hyprland files
-    import_playbook: hyprland/filePlacement.yaml
+- name: install hyprland packages
+  import_playbook: hyprland/installPackages.yaml
+- name: place the hyprland files
+  import_playbook: hyprland/filePlacement.yaml
