@@ -1,0 +1,6 @@
+packages:
+  - capitaine-cursors
+  - qt5-wayland
+  - qt6-wayland
+  - ttf-font-awesome
+  - pamixer
