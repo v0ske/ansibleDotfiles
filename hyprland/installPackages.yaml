@@ -1,0 +1,22 @@
+---
+- name: Install Community Packages using pacman
+  hosts: localhost
+  vars:
+    package_list: "{{ lookup('file', 'packages/hyprlandCommunityPackages.txt') }}"
+  tasks:
+  - name: Install community packages
+    pacman:
+      name: "{{ item }}"
+      state: present
+    with_items: "{{ package_list }}"
+
+---
+- name: Install AUR packages
+  hosts: localhost
+  vars:
+    package_list: "{{ lookup('file', 'packages/hyprlandAurPackages.txt') }}"
+  tasks:
+  - name: Install AUR packages
+    shell: "paru -S --noconfirm {{ item }}"
+    with_items: "{{ package_list }}"
+

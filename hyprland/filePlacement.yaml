@@ -1,0 +1,66 @@
+---
+- name: place hyprsome binary
+  hosts: localhost
+  tasks:
+  - name: hyprsome
+    file:
+      src: binaries/hyprsome
+      dest: /usr/local/bin/hyprsome
+
+---
+- name: place hyprland configs
+  hosts: localhost
+  tasks:
+  - name: Create hypr config directory
+    file:
+      path: ~/.config/hypr
+      state: directory
+    when: not (ansible_facts['file_exists']['~/.config/hypr'])
+  - name: hyprland.conf
+    template:
+      src: templates/hyprlandConfig/hyprland.conf.j2
+      dest: ~/.config/hypr/hyprland.conf
+  - name: hyprpaper.conf
+    file:
+      src: templates/hyprlandConfig/hyprpaper.conf
+      dest: ~/.config/hypr/hyprpaper.conf
+  - name: hyprsome.conf
+    file:
+      src: templates/hyprlandConfig/hyprsome.conf
+      dest: ~/.config/hypr/hyprsome.conf
+  - name: keybinds.conf
+    file:
+      src: templates/hyprlandConfig/keybinds.conf
+      dest: ~/.config/hypr/keybinds.conf
+---
+- name: place waybar configs
+  hosts: localhost
+  tasks:
+- name: Create way config directory
+  file:
+    path: ~/.config/hypr
+  when: not (ansible_facts['file_exists']['~/.config/hypr'])
+  - name: config
+    file:
+      src: templates/waybarConfig/config
+      dest: ~/.config/waybar/config
+  - name: style.css
+    file:
+      src: templates/waybarConfig/style.css
+      dest: ~/.config/waybar/style.css
+---
+- name: place swaync configs
+  hosts: localhost
+  tasks:
+  - name: config
+    file:
+      src: templates/swayncConfig/config.json
+      dest: ~/.config/swaync/config.json
+---
+- name: place nwgdrawer config
+  hosts: localhost
+  tasks:
+  - name: config
+    file:
+      src: templates/nwgdrawerConfig/drawer.css
+      dest: ~/.config/nwg-drawer/drawer.css

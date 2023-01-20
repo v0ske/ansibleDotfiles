@@ -1,0 +1,187 @@
+
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: Ubuntu Nerd Font;
+    font-size: 13px;
+    font-weight: bold;
+    min-height: 30px;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.75);
+    border-bottom: 0px solid rgba(100, 114, 125, 0.5);
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-radius: 0px;
+    padding: 20px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    background-color: transparent;
+    color: #ffffff;
+    box-shadow: inset 0px -2px transparent;
+    border-radius: 0px;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0px -2px #ffffff;
+    outline-style: none;
+    text-shadow: none;
+}
+
+#workspaces button.active {
+    background-color: #008080;
+    box-shadow: inset 0px -0px #ffffff;
+    outline-style: none;
+    text-shadow: none;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+    outline-style: none;
+    text-shadow: none;
+}
+
+#mode {
+    background-color: #FF4040;
+    border-bottom: 0px solid #ffffff;
+    border-radius: 0px;
+}
+
+#tray {
+    padding: 0px 5px;
+    margin: 0px 5px;
+    color: #ffffff;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0);
+}
+
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#mode,
+#custom-date,
+#idle_inhibitor {
+    padding: 0px 5px;
+    margin: 0px 5px;
+    color: #ffffff;
+    border-radius: 5px
+}
+
+#workspaces {
+    margin: 0px 2px;
+}
+
+#window {
+    margin: 0px 5px;
+    border-radius: 0px;
+    background-color: transparent;
+    padding: 7px;
+    font-family: Ubuntu; 
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#battery {
+    color: #ffffff;
+}
+
+#battery.charging {
+    color: #ffffff;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #BF616A;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    color: #FFFFFF;
+}
+
+#memory {
+    color: #FFFFFF;
+
+}
+
+#backlight {
+    color: #FFFFFF;
+}
+
+#network {
+    color: #FFFFFF;
+}
+
+#network.disconnected {
+    background-color: #BF616A;
+}
+
+#pulseaudio {
+    color: #FFFFFF;
+
+}
+
+#pulseaudio.muted {
+    background-color: #90b1b1;
+    color: #2a5c45;
+}
+
+#temperature {
+    color: #FFFFFF;
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+#idle_inhibitor {
+    color: #9F9F9F;
+}
+
+#idle_inhibitor.activated {
+    color: #FFFFFF;
+    border-radius: 10px;
+    margin: 0px 5px;
+    box-shadow: inset 0px 0px #ecF0F1;
+}
+
+#custom-date {
+    color: #FFFFFF;
+}

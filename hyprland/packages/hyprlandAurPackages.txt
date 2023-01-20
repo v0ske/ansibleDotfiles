@@ -1,0 +1,13 @@
+grimshot
+nwg-drawer
+swaync
+xdg-desktop-portal-hyprland
+hyprpaper
+hyprland
+hyprsome
+nwg-bar
+gtklock
+avizo
+nwg-look
+waybar-hyprland
+gtklock
