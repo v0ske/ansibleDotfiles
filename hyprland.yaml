@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  roles:
+    - hyprland
+    - waybar
+    - gtklock
+    - nwg-drawer
+    - swaync
+    - wallpapers
+  vars:
+    - env: laptop

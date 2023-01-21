@@ -1,0 +1,13 @@
+---
+- name: Create waybar config directory
+  file:
+    path: ~/.config/waybar
+    state: directory
+- name: config
+  copy:
+    src: files/config
+    dest: ~/.config/waybar/config
+- name: style.css
+  copy:
+    src: files/style.css
+    dest: ~/.config/waybar/style.css

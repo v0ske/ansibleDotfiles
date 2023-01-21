@@ -1,0 +1,30 @@
+- name: Create hypr config directory
+  file:
+    path: ~/.config/hypr
+    state: directory
+- name: hyprsome
+  copy:
+    src: files/binaries/hyprsome
+    dest: ~/.config/hypr/hyprsome
+    mode: 0755
+- name: audioswitch script
+  copy: 
+    src: files/assets/audio_switch.sh
+    dest: ~/.config/hypr/audio_switch.sh
+    mode: 0755
+- name: hyprland.conf
+  template:
+    src: templates/hyprland.conf.j2
+    dest: ~/.config/hypr/hyprland.conf
+- name: hyprpaper.conf
+  copy:
+    src: files/hyprpaper.conf
+    dest: ~/.config/hypr/hyprpaper.conf
+- name: hyprsome.conf
+  copy:
+    src: files/hyprsome.conf
+    dest: ~/.config/hypr/hyprsome.conf
+- name: keybinds.conf
+  copy:
+    src: files/keybinds.conf
+    dest: ~/.config/hypr/keybinds.conf

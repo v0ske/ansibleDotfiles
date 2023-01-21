@@ -1,0 +1,15 @@
+---
+- name: create gtklock dir
+  file:
+    path: ~/.config/gtklock
+    state: directory
+- name: gtklock conf
+  copy:
+    src: files/config.ini
+    dest: ~/.config/gtklock/config.ini
+- name: gtklock styling
+  copy:
+    src: files/style.css
+    dest: ~/.config/gtklock/style.css
+
+- include_tasks: packages.yaml

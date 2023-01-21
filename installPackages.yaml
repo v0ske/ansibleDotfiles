@@ -1,0 +1,16 @@
+- name: Install batch of packages
+  hosts: localhost
+  tasks:
+  - name: include var packages
+  #become: yes
+    #become_user: "{{ passwordless_sudo_user_name }}"
+    include_vars: packages/packages.yaml
+  - name: install packages
+    command: >
+      yay -S
+        --answerclean none --answeredit none --answerupgrade none --answerdiff none
+        --removemake --noconfirm --combinedupgrade --needed
+        {% for pkg in packages %}
+          {{ pkg | quote }}
+        {% endfor %}
+

@@ -1,0 +1,9 @@
+---
+- name: Create swaync config directory
+  file:
+    path: ~/.config/swaync
+    state: directory
+- name: config
+  copy:
+    src: files/config.json
+    dest: ~/.config/swaync/config.json

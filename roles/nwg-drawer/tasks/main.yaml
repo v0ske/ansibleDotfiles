@@ -1,0 +1,9 @@
+---
+- name: Create nwgdrawer config directory
+  file:
+    path: ~/.config/nwg-drawer
+    state: directory
+- name: config
+  copy:
+    src: files/drawer.css
+    dest: ~/.config/nwg-drawer/drawer.css

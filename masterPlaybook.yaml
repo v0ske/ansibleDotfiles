@@ -4,7 +4,9 @@
   vars:
     env: laptop
   # Run hyprland playbooks
-- name: install hyprland packages
+  - name: install hyprland packages
   import_playbook: hyprland/installPackages.yaml
-- name: place the hyprland files
+  - name: place the hyprland files
   import_playbook: hyprland/filePlacement.yaml
+  vars:
+    env: laptop

@@ -1,0 +1,18 @@
+packages:
+  - capitaine-cursors
+  - qt5-wayland
+  - qt6-wayland
+  - ttf-font-awesome
+  - pamixer
+  - grimshot
+  - nwg-drawer
+  - swaync
+  - xdg-desktop-portal-hyprland-git
+  - hyprpaper-git
+  - hyprland
+  - nwg-bar
+  - gtklock
+  - avizo
+  - nwg-look
+  - waybar-hyprland
+  - gtklock

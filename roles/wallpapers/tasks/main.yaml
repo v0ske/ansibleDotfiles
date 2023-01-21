@@ -1,0 +1,10 @@
+---
+- name: create wallpaper dir
+  file:
+    path: ~/Pictures/wallpapers
+    state: directory
+- name: place wallpapers
+  copy:
+    src: files/
+    dest: ~/Pictures/wallpapers/
+
