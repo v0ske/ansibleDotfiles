@@ -1,0 +1,14 @@
+---
+- name: install kitty
+  include_role:
+    name: installPackages
+- name: place kitty config files
+  block:
+  - name: create kitty directory
+    file:
+      path: ~/.config/kitty
+      state: directory
+  - name: place kitty config
+    copy:
+      src: files/kitty.conf
+      dest: ~/.config/kitty/kitty.conf
