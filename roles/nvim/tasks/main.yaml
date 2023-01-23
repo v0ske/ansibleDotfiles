@@ -1,19 +1,7 @@
 ---
-- name: install nvim package arch
-  pacman:
-    name: neovim
-    state: present
-  when: 
-  - ansible_facts['distribution'] == "ArchLInux"
-- name: install nvim package 
-  yum:
-    name: neovim
-    state: present
-    when:
-    - ansible_facts['distribution'] == "RedHat"
-    become: yes
-    become_method: sudo
-    become_user: root
+- name: install nvim package
+  include_role:
+    name: installPackages
 - name: clone nvchad repo
   git:
     repo: https://github.com/NvChad/NvChad
