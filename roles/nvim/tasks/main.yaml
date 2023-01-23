@@ -9,8 +9,11 @@
   yum:
     name: neovim
     state: present
-  when:
-  - ansible_facts['distribution'] == "RedHat"
+    when:
+    - ansible_facts['distribution'] == "RedHat"
+    become: yes
+    become_method: sudo
+    become_user: root
 - name: clone nvchad repo
   git:
     repo: https://github.com/NvChad/NvChad
@@ -18,14 +21,11 @@
     clone: yes
     update: yes
     depth: 1
-- block:
-  - name: check if directory exists
-    stat:
-      path: '~/.config/nvim/lua/custom'
-    register: directory_data
-  - debug: var=directory_data.path
-  - name: create custom directory
-    copy:
-      src: files/custom/
-      dest: ~/config/nvim/lua/custom/
-    when: not directory_data.stat.exists 
+- name: create custom directory
+  file:
+    path: ~/.config/nvim/lua/custom
+    state: directory
+- name: place custom files
+  copy:
+    src: files/custom/
+    dest: ~/.config/nvim/lua/custom/
