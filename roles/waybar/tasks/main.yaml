@@ -1,13 +1,16 @@
 ---
+- name: install waybar package
+  include_role:
+    name: installPackages
 - name: Create waybar config directory
   file:
     path: ~/.config/waybar
     state: directory
-- name: config
+- name: place config file
   copy:
     src: files/config
     dest: ~/.config/waybar/config
-- name: style.css
+- name: place style file
   copy:
     src: files/style.css
     dest: ~/.config/waybar/style.css
