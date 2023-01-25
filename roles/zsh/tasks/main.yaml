@@ -1,0 +1,41 @@
+---
+- name: install zsh package
+  include_role:
+    name: installPackages
+- name: clone all repos
+  block:
+  - name: clone ohmyzsh
+    git:
+      repo: https://github.com/ohmyzsh/ohmyzsh.git
+      dest: ~/.ohmyzsh
+      clone: yes
+      update: yes
+  - name: clone theme powerlevel10k
+    git:
+      repo: https://github.com/romkatv/powerlevel10k.git
+      dest: ~/.themes/powerlevel10k
+      clone: yes
+      update: yes
+  - name: clone zsh-autosuggestions
+    git:
+      repo: https://github.com/zsh-users/zsh-autosuggestions.git
+      dest: ~/.zsh/plugins/zsh-autosuggestions
+      clone: yes
+      update: yes
+  - name: clone zsh-syntax-highlighting
+    git:
+      repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+      dest: ~/.zsh/plugins/zsh-syntax-highlighting
+      clone: yes
+      update: yes
+- name: place all config files
+  block:
+  - name: place zshrc
+    copy:
+      src: files/zshrc
+      dest: ~/.zshrc
+  - name: place p10k.zsh
+    copy:
+      src: files/p10k.zsh
+      dest: ~/.p10k.zsh
+
