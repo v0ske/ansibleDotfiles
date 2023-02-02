@@ -14,3 +14,12 @@
   copy:
     src: files/style.css
     dest: ~/.config/waybar/style.css
+- name: create scripts directory
+  file:
+    path: ~/.config/waybar/scripts
+    state: directory
+- name: place scripts
+  copy:
+    src: files/scripts/
+    dest: ~/.config/waybar/scripts/
+    mode: a+x
