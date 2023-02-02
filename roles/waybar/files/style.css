@@ -185,3 +185,10 @@ label:focus {
 #custom-date {
     color: #FFFFFF;
 }
+
+#custom-vdabVPN {
+    background-color: #7bef31;
+    color: #000000;
+    border-radius: 10px;
+    margin: 0px 5px;
+}

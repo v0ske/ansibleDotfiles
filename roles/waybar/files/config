@@ -4,7 +4,7 @@
 //    "ipc": true,
     "modules-left": ["wlr/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["sway/window"],
-    "modules-right": ["network", "cpu", "memory", "temperature", "battery", "tray", "custom/date"],
+    "modules-right": ["custom/vdabVPN", "network", "cpu", "memory", "temperature", "battery", "tray", "custom/date"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -97,14 +97,18 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol -t 3",
-	"on-click-right": "pkill pavucontrol"
+	      "on-click-right": "pkill pavucontrol"
     },
-"custom/date": {
+    "custom/date": {
         "format": "{}",
         "interval": 60,
         "exec": "date +'%l:%M %p'",
         "on-click": "dash .local/bin/scripts/mako/cal.sh",
-	"on-click-right": "foot calcurse",
+	      "on-click-right": "foot calcurse",
         "tooltip": false
+    },
+    "custom/vdabVPN": {
+        "interval": 5, 
+        "exec": "/home/laurent08/.config/waybar/scripts/vdab_vpn_status.sh",
     },
 }
