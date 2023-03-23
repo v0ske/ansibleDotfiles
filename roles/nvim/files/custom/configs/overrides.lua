@@ -8,20 +8,25 @@ M.treesitter = {
     "css",
     "javascript",
     "c",
+    "markdown",
+    "markdown_inline",
+    "hcl",
+    "terraform",
+  },
+  indent = {
+    enable = true,
+    disable = {
+      "python"
+    },
   },
 }
 
 M.mason = {
   ensure_installed = {
-    -- lua stuff
-    "lua-language-server",
-    "stylua",
-
-    -- web dev stuff
-    "css-lsp",
-    "html-lsp",
-    "typescript-language-server",
-    "deno",
+    "autoflake",
+    "autopep8",
+    "yamlfmlt",
+    "yamlls",
   },
 }
 
@@ -39,6 +44,12 @@ M.nvimtree = {
       },
     },
   },
+
+  -- take out right side view because of a visual bug in tabufline
+  -- view = {
+  --   side = "right",
+  -- },
 }
+
 
 return M
