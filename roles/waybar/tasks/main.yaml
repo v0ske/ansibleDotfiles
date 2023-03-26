@@ -1,7 +1,7 @@
 ---
 - name: install waybar package
   include_role:
-    name: installPackages
+    name: installAurPackages
 - name: Create waybar config directory
   file:
     path: ~/.config/waybar
