@@ -47,6 +47,11 @@ plugins=(
 alias ssh='TERM=linux ssh'
 alias zimbra-tunnel="echo 'Zimbra admin interface is now available at https://localhost:7071/zimbraAdmin/'; ssh -NL 7071:zimbra11.mgmtprod:7071 proxy_inuits"
 
+command_exists () {
+	    type "$1" &> /dev/null ;
+    }
+if command_exists nvim; then alias vim='nvim'; fi
+
 if [ -n "$DESKTOP_SESSION" ];then
     eval $(gnome-keyring-daemon --start)
     export SSH_AUTH_SOCK
