@@ -7,3 +7,7 @@
   copy:
     src: files/drawer.css
     dest: ~/.config/nwg-drawer/drawer.css
+
+- name: install nwg-drawer
+  include_role:
+    name: installAurPackages
