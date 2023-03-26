@@ -7,13 +7,9 @@ packages:
 
 packages_aur:
   - grimshot
-  - nwg-drawer
-  - swaync
   - xdg-desktop-portal-hyprland-git
   - hyprpaper-git
   - hyprland
   - nwg-bar
-  - gtklock
   - avizo
   - nwg-look
-  - waybar-hyprland
