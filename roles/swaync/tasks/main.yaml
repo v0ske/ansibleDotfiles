@@ -7,3 +7,7 @@
   copy:
     src: files/config.json
     dest: ~/.config/swaync/config.json
+
+- name: install swaync
+  include_role:
+    name: installAurPackages
