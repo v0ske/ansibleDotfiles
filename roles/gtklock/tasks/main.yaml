@@ -12,4 +12,6 @@
     src: files/style.css
     dest: ~/.config/gtklock/style.css
 
-- include_tasks: packages.yaml
+- name: install gtklock
+  include_role:
+    name: installAurPackages
