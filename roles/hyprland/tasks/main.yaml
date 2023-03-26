@@ -2,6 +2,9 @@
 - name: install hyprland packages
   include_role:
     name: installPackages
+- name: install hyprland aur packages
+  include_role:
+    name: installAurPackages
 - name: Create hypr config directory
   file:
     path: ~/.config/hypr

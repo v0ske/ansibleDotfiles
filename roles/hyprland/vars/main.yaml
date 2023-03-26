@@ -4,6 +4,8 @@ packages:
   - qt6-wayland
   - ttf-font-awesome
   - pamixer
+
+packages_aur:
   - grimshot
   - nwg-drawer
   - swaync
@@ -15,4 +17,3 @@ packages:
   - avizo
   - nwg-look
   - waybar-hyprland
-  - gtklock
