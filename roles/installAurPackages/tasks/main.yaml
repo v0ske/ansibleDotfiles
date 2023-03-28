@@ -1,21 +1,4 @@
 ---
-- name: Create the `aur_builder` user
-  become: yes
-  ansible.builtin.user:
-    name: aur_builder
-    create_home: yes
-    group: wheel
-- name: Allow the `aur_builder` user to run `sudo pacman` without a password
-  become: yes
-  ansible.builtin.lineinfile:
-    path: /etc/sudoers.d/11-install-aur_builder
-    line: 'aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
-    create: yes
-    validate: 'visudo -cf %s'
-- name: create aur module dir
-  ansible.builtin.command: mkdir -p ~/.ansible/plugins/modules
-- name: install aur module
-  ansible.builtin.command: curl -o ~/.ansible/plugins/modules/aur.py https://raw.githubusercontent.com/kewlfft/ansible-aur/master/plugins/modules/aur.py
 - name: Install aur packages
   aur:
     use: yay

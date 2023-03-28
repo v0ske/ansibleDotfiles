@@ -1,0 +1,7 @@
+---
+- name: install general packages
+  include_role:
+    name: installPackages
+- name: install general aur packages
+  include_role:
+    name: installAurPackages
