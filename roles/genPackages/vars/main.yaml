@@ -41,6 +41,9 @@ packages:
   - pop-gtk-theme
   - openconnect
   - skopeo
+  - ccid
+  - acsscid
+  - eid-mw
 packages_aur:
   - jellyfin-media-player
   - puppet-lint
