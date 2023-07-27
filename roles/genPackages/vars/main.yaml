@@ -36,7 +36,7 @@ packages:
   - syncthing
   - tmux
   - the_silver_searcher
-  - ttf-nerd-fonts-symbols-1000-em 
+  - ttf-nerd-fonts-symbols 
   - polkit-gnome
   - pop-gtk-theme
   - openconnect
