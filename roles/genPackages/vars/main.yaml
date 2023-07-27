@@ -47,7 +47,6 @@ packages:
 packages_aur:
   - jellyfin-media-player
   - puppet-lint
-  - nautilus-nextcloud
   - authy
   - ferdium
   - mailspring
