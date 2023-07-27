@@ -35,7 +35,7 @@ packages:
   - ranger
   - syncthing
   - tmux
-  - the-silver-searcher
+  - the_silver_searcher
   - ttf-nerd-fonts-symbols-1000-em 
   - polkit-gnome
   - pop-gtk-theme
