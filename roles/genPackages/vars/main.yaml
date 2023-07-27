@@ -42,7 +42,7 @@ packages:
   - openconnect
   - skopeo
   - ccid
-  - acsscid
+  - acsccid
   - eid-mw
 packages_aur:
   - jellyfin-media-player
