@@ -3,13 +3,13 @@
 //    "output": "HDMI-A-2",
 //    "ipc": true,
     "layer": "top",
-    "modules-left": ["wlr/workspaces", "sway/mode", "custom/media"],
+    "modules-left": ["hyprland/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["sway/window", "custom/date", "custom/vdabVPN"],
     "modules-right": ["network", "cpu", "memory", "temperature", "battery", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
-    "wlr/workspaces": {
+    "hyprland/workspaces": {
       "on-click": "activate",
     },
     "sway/window": {
