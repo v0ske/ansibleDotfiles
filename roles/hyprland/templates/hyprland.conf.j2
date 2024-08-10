@@ -85,7 +85,7 @@ dwindle {
 
 master {
     # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-    new_is_master = true
+    new_status = master
 }
 
 gestures {
@@ -119,3 +119,5 @@ exec = export SSH_AUTH_SOCK
 exec = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec = dbus-update-activation-environment --systemd WAYLAND_DISPLAY
 
+# env Variables
+env = HYPRCURSOR_SIZE,24
