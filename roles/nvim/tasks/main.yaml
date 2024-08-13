@@ -2,13 +2,18 @@
 - name: install nvim package
   include_role:
     name: installPackages
+- name: Remove existing nvim directory if it exists
+  file:
+    path: "{{ ansible_env.HOME }}/.config/nvim"
+    state: absent
 - name: clone nvchad repo
   git:
-    repo: https://github.com/NvChad/NvChad
+    repo: https://github.com/NvChad/starter
     dest: ~/.config/nvim
     clone: yes
     update: yes
     depth: 1
+    force: yes
 - name: create custom directory
   file:
     path: ~/.config/nvim/lua/custom
