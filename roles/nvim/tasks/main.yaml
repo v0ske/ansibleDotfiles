@@ -6,6 +6,12 @@
   file:
     path: "{{ ansible_env.HOME }}/.config/nvim"
     state: absent
+  file:
+    path: "{{ ansible_env.HOME }}/.local/state/nvim"
+    state: absent
+  file:
+    path: "{{ ansible_env.HOME }}/.local/share/nvim"
+    state: absent
 - name: clone nvchad repo
   git:
     repo: https://github.com/NvChad/starter
